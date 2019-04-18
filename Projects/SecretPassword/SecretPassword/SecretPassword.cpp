@@ -34,7 +34,7 @@ int main()
 		// Сравниваем оригинальный и введенный пароль 
 		if (strcmp(&buff[0], PASSWORD)) {
 			// Если пароли не совпадают — «ругаемся»
-			printf("Неверный пароль\n");
+			cout << "Неверный пароль\n" << endl;
 			Sleep(500);
 			system("cls");
 		}
@@ -47,12 +47,13 @@ int main()
 	}
 	// Раз мы здесь, то пользователь ввел правильный 
 	// пароль 
-	cout << "***Доступ разрешен***\n" << endl;
+	cout << "**Доступ разрешен**\n" << endl;
 	AudioDevicePtr device = OpenDevice(); //Для начала нужно открыть AudioDevice 
 	OutputStreamPtr sound = OpenSound(device, "tm1_objective_location1.wav", false); //создаем поток для нашего звука
 	sound->setRepeat(false);
 	sound->setVolume(1.0f);
 	sound->play();
+	
 	system("pause");
 
 }
